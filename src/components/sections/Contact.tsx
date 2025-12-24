@@ -1,5 +1,6 @@
 import { useInView } from "@/hooks/useInView";
-import { User, Phone, Mail, MapPin, Home } from "lucide-react";
+import { User, Phone, Mail, MapPin, Home, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const contactInfo = [
   { icon: User, label: "Full Name", value: "Lenin [Last Name]" },
@@ -45,6 +46,17 @@ export function Contact() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-8 text-center">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg shadow-[0_0_20px_hsl(270,80%,60%,0.4)] hover:shadow-[0_0_30px_hsl(270,80%,60%,0.6)] transition-all"
+                onClick={() => window.location.href = "mailto:lenin@example.com"}
+              >
+                <Send className="w-5 h-5 mr-2" />
+                Send Message
+              </Button>
             </div>
           </div>
         </div>
