@@ -28,7 +28,7 @@ export function Hero() {
           <img
             src={logo}
             alt="Lenin's Visual Logo"
-            className="w-32 h-32 md:w-40 md:h-40 mx-auto drop-shadow-[0_0_30px_hsl(270,80%,60%,0.5)]"
+            className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full drop-shadow-[0_0_30px_hsl(270,80%,60%,0.5)]"
           />
         </div>
 

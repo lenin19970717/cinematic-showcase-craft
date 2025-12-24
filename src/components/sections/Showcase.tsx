@@ -5,40 +5,43 @@ import { Camera, Video, Clapperboard, Pencil, Sparkles, Play } from "lucide-reac
 import { ImageGallery } from "@/components/gallery/ImageGallery";
 import { VideoEmbed } from "@/components/gallery/VideoEmbed";
 
-// Placeholder data - Lenin will replace with actual content
+// Import photography images
+import wildlifePhoto from "@/assets/wildlife.jpg";
+import naturePhoto from "@/assets/nature.jpg";
+import portraitPhoto from "@/assets/portrait.jpg";
+
+// Import AI photos
+import aiPhoto1 from "@/assets/ai-photo-1.jpg";
+import aiPhoto2 from "@/assets/ai-photo-2.jpg";
+import aiPhoto3 from "@/assets/ai-photo-3.png";
+
 const photographyCategories = {
   wildlife: [
-    { src: "/placeholder.svg", alt: "Wildlife photo 1" },
-    { src: "/placeholder.svg", alt: "Wildlife photo 2" },
-    { src: "/placeholder.svg", alt: "Wildlife photo 3" },
+    { src: wildlifePhoto, alt: "Wildlife - Bird Photography" },
   ],
   nature: [
-    { src: "/placeholder.svg", alt: "Nature photo 1" },
-    { src: "/placeholder.svg", alt: "Nature photo 2" },
-    { src: "/placeholder.svg", alt: "Nature photo 3" },
+    { src: naturePhoto, alt: "Nature - Green Grass" },
   ],
   portraits: [
-    { src: "/placeholder.svg", alt: "Portrait 1" },
-    { src: "/placeholder.svg", alt: "Portrait 2" },
-    { src: "/placeholder.svg", alt: "Portrait 3" },
+    { src: portraitPhoto, alt: "Portrait - Child studying by candlelight" },
   ],
 };
 
 const videographyCategories = {
   greeny: [
-    { url: "https://www.youtube.com/embed/dQw4w9WgXcQ", title: "Greeny Video 1" },
+    { url: "https://www.youtube.com/embed/nf2ybbjdYVk", title: "Greeny" },
   ],
   blue: [
-    { url: "https://www.youtube.com/embed/dQw4w9WgXcQ", title: "Blue Video 1" },
+    { url: "https://www.youtube.com/embed/iXw0aeeUY1s", title: "Blue" },
   ],
   lightShadow: [
-    { url: "https://www.youtube.com/embed/dQw4w9WgXcQ", title: "Light & Shadow 1" },
+    { url: "https://www.youtube.com/embed/CZzWbvVIaCQ", title: "Light & Shadow" },
   ],
 };
 
 const shortFilms = [
-  { url: "https://www.youtube.com/embed/dQw4w9WgXcQ", title: "Short Film 1" },
-  { url: "https://www.youtube.com/embed/dQw4w9WgXcQ", title: "Short Film 2" },
+  { url: "https://www.youtube.com/embed/o9lxCOGskis", title: "OONJAL" },
+  { url: "https://www.youtube.com/embed/NNBcSQI2BVI", title: "Soul Diemention" },
 ];
 
 const drawings = [
@@ -48,13 +51,13 @@ const drawings = [
 ];
 
 const aiPhotos = [
-  { src: "/placeholder.svg", alt: "AI Photo 1" },
-  { src: "/placeholder.svg", alt: "AI Photo 2" },
-  { src: "/placeholder.svg", alt: "AI Photo 3" },
+  { src: aiPhoto1, alt: "AI Generated - Kannukulla Poster 1" },
+  { src: aiPhoto2, alt: "AI Generated - Kannukulla Poster 2" },
+  { src: aiPhoto3, alt: "AI Generated - Textile Shop Scene" },
 ];
 
 const aiVideos = [
-  { url: "https://drive.google.com/file/d/FILE_ID/preview", title: "AI Video 1" },
+  { url: "https://drive.google.com/file/d/1tIyGFecqrN5GLPhjTyCqXN3qkCXoE3o0/preview", title: "AI Video - Kannukulla" },
 ];
 
 const showcaseTabs = [
@@ -139,9 +142,9 @@ export function Showcase() {
                   </button>
                 ))}
               </div>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="max-w-2xl mx-auto">
                 {videographyCategories[videoCategory].map((video, i) => (
-                  <VideoEmbed key={i} url={video.url} title={video.title} />
+                  <VideoEmbed key={i} url={video.url} title={video.title} isShort />
                 ))}
               </div>
             </TabsContent>
@@ -150,7 +153,10 @@ export function Showcase() {
             <TabsContent value="shortfilms">
               <div className="grid md:grid-cols-2 gap-6">
                 {shortFilms.map((video, i) => (
-                  <VideoEmbed key={i} url={video.url} title={video.title} />
+                  <div key={i} className="space-y-2">
+                    <h3 className="text-lg font-semibold text-center text-foreground">{video.title}</h3>
+                    <VideoEmbed url={video.url} title={video.title} />
+                  </div>
                 ))}
               </div>
             </TabsContent>
