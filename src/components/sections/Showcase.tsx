@@ -24,6 +24,12 @@ import aiPhoto1 from "@/assets/ai-photo-1.jpg";
 import aiPhoto2 from "@/assets/ai-photo-2.jpg";
 import aiPhoto3 from "@/assets/ai-photo-3.png";
 
+// Import Drawings
+import drawing1 from "@/assets/drawing-1.jpg";
+import drawing2 from "@/assets/drawing-2.jpg";
+import drawing3 from "@/assets/drawing-3.jpg";
+import drawing4 from "@/assets/drawing-4.jpg";
+
 const photographyCategories = {
   wildlife: [
     { src: wildlifePhoto, alt: "Wildlife - Bird Photography" },
@@ -59,9 +65,10 @@ const shortFilms = [
 ];
 
 const drawings = [
-  { src: "/placeholder.svg", alt: "Drawing 1" },
-  { src: "/placeholder.svg", alt: "Drawing 2" },
-  { src: "/placeholder.svg", alt: "Drawing 3" },
+  { src: drawing1, alt: "Drawing - Desert Landscape with Tree" },
+  { src: drawing2, alt: "Drawing - Still Life with Pots" },
+  { src: drawing3, alt: "Drawing - Eyes Portrait" },
+  { src: drawing4, alt: "Drawing - Child Portrait" },
 ];
 
 const aiPhotos = [
