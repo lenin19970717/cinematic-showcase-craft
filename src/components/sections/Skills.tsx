@@ -38,7 +38,7 @@ export function Skills() {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Skills & <span className="text-primary">Initiatives</span>
+            Our <span className="text-primary">Services</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-12" />
 
