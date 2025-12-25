@@ -30,6 +30,9 @@ import drawing2 from "@/assets/drawing-2.jpg";
 import drawing3 from "@/assets/drawing-3.jpg";
 import drawing4 from "@/assets/drawing-4.jpg";
 
+// Import AI Video thumbnail
+import kannukullaThumbnail from "@/assets/kannukulla-thumbnail.jpg";
+
 const photographyCategories = {
   wildlife: [
     { src: wildlifePhoto, alt: "Wildlife - Bird Photography" },
@@ -78,7 +81,7 @@ const aiPhotos = [
 ];
 
 const aiVideos = [
-  { url: "https://drive.google.com/file/d/1tIyGFecqrN5GLPhjTyCqXN3qkCXoE3o0/preview", title: "AI Video - Kannukulla" },
+  { url: "https://drive.google.com/file/d/1tIyGFecqrN5GLPhjTyCqXN3qkCXoE3o0/preview", title: "Kannukulla...!", thumbnail: kannukullaThumbnail },
 ];
 
 const showcaseTabs = [
@@ -196,7 +199,7 @@ export function Showcase() {
             <TabsContent value="aivideo">
               <div className="max-w-3xl mx-auto">
                 {aiVideos.map((video, i) => (
-                  <VideoEmbed key={i} url={video.url} title={video.title} isGoogleDrive />
+                  <VideoEmbed key={i} url={video.url} title={video.title} isGoogleDrive thumbnail={video.thumbnail} />
                 ))}
               </div>
             </TabsContent>
