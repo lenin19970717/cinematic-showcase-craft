@@ -5,9 +5,18 @@ import { Camera, Video, Clapperboard, Pencil, Sparkles, Play } from "lucide-reac
 import { ImageGallery } from "@/components/gallery/ImageGallery";
 import { VideoEmbed } from "@/components/gallery/VideoEmbed";
 
-// Import photography images
+// Import photography images - Wildlife
 import wildlifePhoto from "@/assets/wildlife.jpg";
+import wildlifeOwl from "@/assets/wildlife-owl.jpg";
+import wildlifeKite from "@/assets/wildlife-kite.jpg";
+import wildlifeEgret from "@/assets/wildlife-egret.jpg";
+import wildlifeEgrets from "@/assets/wildlife-egrets.jpg";
+
+// Import photography images - Nature
 import naturePhoto from "@/assets/nature.jpg";
+import natureJellyfish from "@/assets/nature-jellyfish.jpg";
+
+// Import photography images - Portraits
 import portraitPhoto from "@/assets/portrait.jpg";
 
 // Import AI photos
@@ -18,9 +27,14 @@ import aiPhoto3 from "@/assets/ai-photo-3.png";
 const photographyCategories = {
   wildlife: [
     { src: wildlifePhoto, alt: "Wildlife - Bird Photography" },
+    { src: wildlifeOwl, alt: "Wildlife - Owl on Ground" },
+    { src: wildlifeKite, alt: "Wildlife - Brahminy Kite" },
+    { src: wildlifeEgret, alt: "Wildlife - Great Egret" },
+    { src: wildlifeEgrets, alt: "Wildlife - Egrets in Grass" },
   ],
   nature: [
     { src: naturePhoto, alt: "Nature - Green Grass" },
+    { src: natureJellyfish, alt: "Nature - Jellyfish on Beach" },
   ],
   portraits: [
     { src: portraitPhoto, alt: "Portrait - Child studying by candlelight" },
