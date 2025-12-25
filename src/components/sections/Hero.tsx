@@ -40,33 +40,25 @@ export function Hero() {
           LENIN'S VISUAL
         </h1>
 
-        {/* Name */}
-        <p
-          className="text-2xl md:text-3xl text-foreground font-medium mb-4 animate-fade-in-up"
-          style={{ animationDelay: "0.3s" }}
-        >
-          Lenin
-        </p>
-
         {/* Tagline */}
         <p
           className="text-lg md:text-xl text-muted-foreground mb-10 animate-fade-in-up"
-          style={{ animationDelay: "0.4s" }}
+          style={{ animationDelay: "0.3s" }}
         >
-          Visual Storyteller | Filmmaker | AI Content Creator
+          Visual Storytelling | Filmmaking | AI Content Creation
         </p>
 
         {/* CTA Buttons */}
         <div
           className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up"
-          style={{ animationDelay: "0.5s" }}
+          style={{ animationDelay: "0.4s" }}
         >
           <Button
             size="lg"
             onClick={() => scrollToSection("#showcase")}
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg shadow-[0_0_20px_hsl(270,80%,60%,0.4)] hover:shadow-[0_0_30px_hsl(270,80%,60%,0.6)] transition-all"
           >
-            View Showcase
+            View Portfolio
           </Button>
           <Button
             size="lg"
@@ -74,7 +66,7 @@ export function Hero() {
             onClick={() => scrollToSection("#contact")}
             className="border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary px-8 py-6 text-lg transition-all"
           >
-            Contact Me
+            Contact Us
           </Button>
         </div>
       </div>

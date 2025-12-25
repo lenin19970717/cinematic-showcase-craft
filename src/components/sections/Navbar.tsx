@@ -5,10 +5,8 @@ import logo from "@/assets/logo.png";
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Education", href: "#education" },
-  { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Showcase", href: "#showcase" },
+  { label: "Services", href: "#skills" },
+  { label: "Portfolio", href: "#showcase" },
   { label: "Contact", href: "#contact" },
 ];
 

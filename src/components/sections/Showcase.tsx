@@ -87,7 +87,7 @@ export function Showcase() {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            My <span className="text-primary">Showcase</span>
+            Our <span className="text-primary">Portfolio</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-12" />
 
