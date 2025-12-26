@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Play } from "lucide-react";
+import { Play, Heart } from "lucide-react";
 
 interface VideoEmbedProps {
   url: string;
@@ -11,6 +11,17 @@ interface VideoEmbedProps {
 
 export function VideoEmbed({ url, title, isGoogleDrive = false, isShort = false, thumbnail }: VideoEmbedProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(128);
+
+  const handleLike = () => {
+    if (isLiked) {
+      setLikeCount(prev => prev - 1);
+    } else {
+      setLikeCount(prev => prev + 1);
+    }
+    setIsLiked(!isLiked);
+  };
 
   return (
     <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 hover:shadow-[0_0_20px_hsl(270,80%,60%,0.15)] transition-all">
@@ -41,11 +52,24 @@ export function VideoEmbed({ url, title, isGoogleDrive = false, isShort = false,
           />
         )}
       </div>
-      <div className="p-4">
-        <h3 className="text-foreground font-medium">{title}</h3>
-        {isGoogleDrive && (
-          <p className="text-muted-foreground text-sm mt-1">Hosted on Google Drive</p>
-        )}
+      <div className="p-4 flex items-center justify-between">
+        <div>
+          <h3 className="text-foreground font-medium">{title}</h3>
+          {isGoogleDrive && (
+            <p className="text-muted-foreground text-sm mt-1">Hosted on Google Drive</p>
+          )}
+        </div>
+        <button
+          onClick={handleLike}
+          className="flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors group"
+        >
+          <Heart 
+            className={`w-5 h-5 transition-colors ${isLiked ? "text-red-500 fill-red-500" : "text-muted-foreground group-hover:text-red-400"}`}
+          />
+          <span className={`text-sm font-medium ${isLiked ? "text-red-500" : "text-muted-foreground"}`}>
+            {likeCount}
+          </span>
+        </button>
       </div>
     </div>
   );

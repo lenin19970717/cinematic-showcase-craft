@@ -50,12 +50,12 @@ export function Skills() {
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <div
-                  className={`w-12 h-12 md:w-14 md:h-14 rounded-xl ${
+                  className={`w-10 h-10 md:w-12 md:h-12 rounded-lg ${
                     skill.color === "primary" ? "bg-primary/10" : "bg-accent/10"
                   } flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform`}
                 >
                   <skill.icon
-                    className={`w-6 h-6 md:w-7 md:h-7 ${
+                    className={`w-5 h-5 md:w-6 md:h-6 ${
                       skill.color === "primary" ? "text-primary" : "text-accent"
                     }`}
                   />

@@ -81,7 +81,7 @@ const aiPhotos = [
 ];
 
 const aiVideos = [
-  { url: "https://drive.google.com/file/d/1tIyGFecqrN5GLPhjTyCqXN3qkCXoE3o0/preview", title: "Kannukulla...!", thumbnail: kannukullaThumbnail },
+  { url: "https://drive.google.com/file/d/1-pcXP26qVDiPt-SwYrfhwGRnnEcNmK-q/preview", title: "Kannukulla...!", thumbnail: kannukullaThumbnail },
 ];
 
 const showcaseTabs = [
