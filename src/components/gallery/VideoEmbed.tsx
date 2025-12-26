@@ -62,13 +62,11 @@ export function VideoEmbed({ url, title, isGoogleDrive = false, isShort = false,
         <button
           onClick={handleLike}
           className="flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors group"
+          title="Like this video"
         >
           <Heart 
             className={`w-5 h-5 transition-colors ${isLiked ? "text-red-500 fill-red-500" : "text-muted-foreground group-hover:text-red-400"}`}
           />
-          <span className={`text-sm font-medium ${isLiked ? "text-red-500" : "text-muted-foreground"}`}>
-            {likeCount}
-          </span>
         </button>
       </div>
     </div>
