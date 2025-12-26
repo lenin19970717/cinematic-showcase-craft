@@ -31,6 +31,10 @@ export function About() {
               continuously explore creative and technological boundaries to deliver meaningful 
               visual experiences for our clients.
             </p>
+            <p className="text-muted-foreground text-lg leading-relaxed mt-6">
+              I started this with no resources. But with the little help I got to showcase my talent, 
+              I created these works. From now on, if I get better resources, I can create even better works.
+            </p>
           </div>
         </div>
       </div>
