@@ -103,7 +103,28 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    cursor: none;
   }
+
+  a, button, [role="button"], input, select, textarea {
+    cursor: none;
+  }
+}
+
+/* Touch devices - restore default cursor */
+@media (pointer: coarse) {
+  body, a, button, [role="button"], input, select, textarea {
+    cursor: auto;
+  }
+}
+
+/* Smooth scroll anchor offset for fixed navbar */
+html {
+  scroll-padding-top: 80px;
 }

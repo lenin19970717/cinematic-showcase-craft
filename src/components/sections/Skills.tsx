@@ -46,16 +46,16 @@ export function Skills() {
             {skills.map((skill, index) => (
               <div
                 key={skill.label}
-                className="bg-card border border-border rounded-xl p-4 md:p-6 text-center hover:border-primary/50 hover:-translate-y-1 hover:shadow-[0_0_20px_hsl(270,80%,60%,0.2)] transition-all group cursor-default"
+                className="bg-card border border-border rounded-xl p-4 md:p-6 text-center hover:border-primary/50 hover:-translate-y-1 hover:shadow-[0_0_20px_hsl(270,80%,60%,0.2)] transition-all duration-300 group cursor-default"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <div
-                  className={`w-10 h-10 md:w-12 md:h-12 rounded-lg ${
+                  className={`w-8 h-8 md:w-10 md:h-10 rounded-lg ${
                     skill.color === "primary" ? "bg-primary/10" : "bg-accent/10"
-                  } flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform`}
+                  } flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}
                 >
                   <skill.icon
-                    className={`w-5 h-5 md:w-6 md:h-6 ${
+                    className={`w-4 h-4 md:w-5 md:h-5 ${
                       skill.color === "primary" ? "text-primary" : "text-accent"
                     }`}
                   />

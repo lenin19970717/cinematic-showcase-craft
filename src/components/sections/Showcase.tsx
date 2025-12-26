@@ -19,6 +19,11 @@ import natureJellyfish from "@/assets/nature-jellyfish.jpg";
 // Import photography images - Portraits
 import portraitPhoto from "@/assets/portrait.jpg";
 
+// Import silhouette photos
+import silhouetteField from "@/assets/silhouette-field.jpg";
+import silhouetteSunset1 from "@/assets/silhouette-sunset-1.jpg";
+import silhouetteSunset2 from "@/assets/silhouette-sunset-2.jpg";
+
 // Import AI photos
 import aiPhoto1 from "@/assets/ai-photo-1.jpg";
 import aiPhoto2 from "@/assets/ai-photo-2.jpg";
@@ -47,6 +52,9 @@ const photographyCategories = {
   ],
   portraits: [
     { src: portraitPhoto, alt: "Portrait - Child studying by candlelight" },
+    { src: silhouetteField, alt: "Silhouette - Boy in Field with Dramatic Sky" },
+    { src: silhouetteSunset1, alt: "Silhouette - Person at Sunset by Water" },
+    { src: silhouetteSunset2, alt: "Silhouette - Friends at Sunset" },
   ],
 };
 
