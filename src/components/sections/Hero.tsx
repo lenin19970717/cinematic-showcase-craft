@@ -25,11 +25,15 @@ export function Hero() {
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         {/* Logo with glow */}
         <div className="mb-8 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-          <img
-            src={logo}
-            alt="Lenin's Visual Logo"
-            className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full drop-shadow-[0_0_30px_hsl(270,80%,60%,0.5)]"
-          />
+          <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto">
+            <div className="absolute inset-0 rounded-full border-4 border-primary animate-glow-pulse" />
+            <div className="absolute inset-[-4px] rounded-full border-2 border-neon-pink/50 animate-glow-pulse" style={{ animationDelay: "0.5s" }} />
+            <img
+              src={logo}
+              alt="Lenin's Visual Logo"
+              className="w-full h-full rounded-full drop-shadow-[0_0_30px_hsl(270,80%,60%,0.5)]"
+            />
+          </div>
         </div>
 
         {/* Title */}

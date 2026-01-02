@@ -45,7 +45,10 @@ export function Navbar() {
             onClick={() => scrollToSection("#home")}
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
-            <img src={logo} alt="Lenin's Visual" className="h-10 w-10 md:h-12 md:w-12" />
+            <div className="relative h-10 w-10 md:h-12 md:w-12">
+              <div className="absolute inset-0 rounded-full border-2 border-primary animate-glow-pulse" />
+              <img src={logo} alt="Lenin's Visual" className="h-full w-full rounded-full" />
+            </div>
             <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-neon-purple via-neon-pink to-neon-orange bg-clip-text text-transparent">
               LENIN'S VISUAL
             </span>
