@@ -89,7 +89,8 @@ const aiPhotos = [
 ];
 
 const aiVideos = [
-  { url: "https://drive.google.com/file/d/1-pcXP26qVDiPt-SwYrfhwGRnnEcNmK-q/preview", title: "Kannukulla...!", thumbnail: kannukullaThumbnail },
+  { url: "https://drive.google.com/file/d/1-pcXP26qVDiPt-SwYrfhwGRnnEcNmK-q/preview", title: "Kannukulla...!", thumbnail: kannukullaThumbnail, isGoogleDrive: true },
+  { url: "https://www.youtube.com/embed/0l1SG-zqfrY", title: "AI Video Creation" },
 ];
 
 const performanceVideos = {
@@ -218,9 +219,9 @@ export function Showcase() {
 
             {/* AI Videos */}
             <TabsContent value="aivideo">
-              <div className="max-w-3xl mx-auto">
+              <div className="max-w-3xl mx-auto space-y-6">
                 {aiVideos.map((video, i) => (
-                  <VideoEmbed key={i} url={video.url} title={video.title} isGoogleDrive thumbnail={video.thumbnail} />
+                  <VideoEmbed key={i} url={video.url} title={video.title} isGoogleDrive={video.isGoogleDrive} thumbnail={video.thumbnail} />
                 ))}
               </div>
             </TabsContent>
