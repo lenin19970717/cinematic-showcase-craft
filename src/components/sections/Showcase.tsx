@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useInView } from "@/hooks/useInView";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Camera, Video, Clapperboard, Pencil, Sparkles, Play } from "lucide-react";
+import { Camera, Video, Clapperboard, Pencil, Sparkles, Play, Mic } from "lucide-react";
 import { ImageGallery } from "@/components/gallery/ImageGallery";
 import { VideoEmbed } from "@/components/gallery/VideoEmbed";
 
@@ -92,6 +92,18 @@ const aiVideos = [
   { url: "https://drive.google.com/file/d/1-pcXP26qVDiPt-SwYrfhwGRnnEcNmK-q/preview", title: "Kannukulla...!", thumbnail: kannukullaThumbnail },
 ];
 
+const performanceVideos = {
+  youtube: [
+    { url: "https://www.youtube.com/embed/aEx_N1BeYF4", title: "My Mimicry in SLIATE" },
+    { url: "https://www.youtube.com/embed/ojnSvKfnVqU", title: "My Singing Performance" },
+  ],
+  googleDrive: [
+    { url: "https://drive.google.com/file/d/1FNqtTLH8SqTXL3i0ghFPT7Equ4FKYhKb/preview", title: "My First Mimicry", isGoogleDrive: true },
+    { url: "https://drive.google.com/file/d/1NzghZHAftHKXHgofTF68LzVE-dr2-kNi/preview", title: "Open Mic 1", isGoogleDrive: true },
+    { url: "https://drive.google.com/file/d/1bFFmca-qsWPzKXfYgl7Yu4tUtvZDEyPN/preview", title: "My Song in Open Mic", isGoogleDrive: true },
+  ],
+};
+
 const showcaseTabs = [
   { value: "photography", label: "Photography", icon: Camera },
   { value: "videography", label: "Videography", icon: Video },
@@ -99,6 +111,7 @@ const showcaseTabs = [
   { value: "drawings", label: "Drawings", icon: Pencil },
   { value: "aiphoto", label: "AI Photos", icon: Sparkles },
   { value: "aivideo", label: "AI Videos", icon: Play },
+  { value: "performance", label: "My Performance", icon: Mic },
 ];
 
 export function Showcase() {
@@ -209,6 +222,28 @@ export function Showcase() {
                 {aiVideos.map((video, i) => (
                   <VideoEmbed key={i} url={video.url} title={video.title} isGoogleDrive thumbnail={video.thumbnail} />
                 ))}
+              </div>
+            </TabsContent>
+
+            {/* My Performance */}
+            <TabsContent value="performance">
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-xl font-semibold text-center text-foreground mb-4">YouTube Performances</h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {performanceVideos.youtube.map((video, i) => (
+                      <VideoEmbed key={i} url={video.url} title={video.title} />
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-center text-foreground mb-4">Stage Performances</h3>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {performanceVideos.googleDrive.map((video, i) => (
+                      <VideoEmbed key={i} url={video.url} title={video.title} isGoogleDrive />
+                    ))}
+                  </div>
+                </div>
               </div>
             </TabsContent>
           </Tabs>
