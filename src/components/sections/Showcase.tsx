@@ -24,6 +24,10 @@ import natureWetlandSunset from "@/assets/nature-wetland-sunset.jpg";
 // Import photography images - Portraits
 import portraitPhoto from "@/assets/portrait.jpg";
 
+// Import photography images - Dark Night
+import darknightMoon from "@/assets/darknight-moon.jpg";
+import darknightSunsetSea from "@/assets/darknight-sunset-sea.jpg";
+
 // Import silhouette photos
 import silhouetteField from "@/assets/silhouette-field.jpg";
 import silhouetteSunset1 from "@/assets/silhouette-sunset-1.jpg";
@@ -65,6 +69,10 @@ const photographyCategories = {
     { src: silhouetteField, alt: "Silhouette - Boy in Field with Dramatic Sky" },
     { src: silhouetteSunset1, alt: "Silhouette - Person at Sunset by Water" },
     { src: silhouetteSunset2, alt: "Silhouette - Friends at Sunset" },
+  ],
+  darknight: [
+    { src: darknightMoon, alt: "Dark Night - Half Moon" },
+    { src: darknightSunsetSea, alt: "Dark Night - Sunset over Sea" },
   ],
 };
 
@@ -128,7 +136,7 @@ const showcaseTabs = [
 
 export function Showcase() {
   const { ref, isInView } = useInView();
-  const [photoCategory, setPhotoCategory] = useState<"wildlife" | "nature" | "portraits">("wildlife");
+  const [photoCategory, setPhotoCategory] = useState<"wildlife" | "nature" | "portraits" | "darknight">("wildlife");
   const [videoCategory, setVideoCategory] = useState<"greeny" | "blue" | "lightShadow">("greeny");
 
   return (
@@ -164,8 +172,8 @@ export function Showcase() {
 
             {/* Photography */}
             <TabsContent value="photography">
-              <div className="mb-6 flex justify-center gap-2">
-                {(["wildlife", "nature", "portraits"] as const).map((cat) => (
+              <div className="mb-6 flex flex-wrap justify-center gap-2">
+                {(["wildlife", "nature", "portraits", "darknight"] as const).map((cat) => (
                   <button
                     key={cat}
                     onClick={() => setPhotoCategory(cat)}
@@ -175,7 +183,7 @@ export function Showcase() {
                         : "bg-card border border-border text-muted-foreground hover:text-foreground"
                     }`}
                   >
-                    {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                    {cat === "darknight" ? "Dark Night" : cat.charAt(0).toUpperCase() + cat.slice(1)}
                   </button>
                 ))}
               </div>
