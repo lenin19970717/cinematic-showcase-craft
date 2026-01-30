@@ -15,6 +15,11 @@ import wildlifeEgrets from "@/assets/wildlife-egrets.jpg";
 // Import photography images - Nature
 import naturePhoto from "@/assets/nature.jpg";
 import natureJellyfish from "@/assets/nature-jellyfish.jpg";
+import natureBeachBoat from "@/assets/nature-beach-boat.jpg";
+import natureRocksSea from "@/assets/nature-rocks-sea.jpg";
+import natureLakeTree from "@/assets/nature-lake-tree.jpg";
+import natureCoastalRocks from "@/assets/nature-coastal-rocks.jpg";
+import natureWetlandSunset from "@/assets/nature-wetland-sunset.jpg";
 
 // Import photography images - Portraits
 import portraitPhoto from "@/assets/portrait.jpg";
@@ -49,6 +54,11 @@ const photographyCategories = {
   nature: [
     { src: naturePhoto, alt: "Nature - Green Grass" },
     { src: natureJellyfish, alt: "Nature - Jellyfish on Beach" },
+    { src: natureBeachBoat, alt: "Nature - Beach with Boat" },
+    { src: natureRocksSea, alt: "Nature - Rocky Coastline" },
+    { src: natureLakeTree, alt: "Nature - Lake with Tree" },
+    { src: natureCoastalRocks, alt: "Nature - Coastal Rocks" },
+    { src: natureWetlandSunset, alt: "Nature - Wetland at Sunset" },
   ],
   portraits: [
     { src: portraitPhoto, alt: "Portrait - Child studying by candlelight" },
@@ -91,6 +101,7 @@ const aiPhotos = [
 const aiVideos = [
   { url: "https://drive.google.com/file/d/1-pcXP26qVDiPt-SwYrfhwGRnnEcNmK-q/preview", title: "Kannukulla...!", thumbnail: kannukullaThumbnail, isGoogleDrive: true },
   { url: "https://www.youtube.com/embed/0l1SG-zqfrY", title: "AI Video Creation" },
+  { url: "https://drive.google.com/file/d/1hh9beG0dUEwGUXJkyAE9UvDCFDg5BQvU/preview", title: "AI Video", isGoogleDrive: true },
 ];
 
 const performanceVideos = {
