@@ -89,7 +89,7 @@ const videographyCategories = {
 };
 
 const shortFilms = [
-  { url: "https://www.youtube.com/embed/o9lxCOGskis", title: "OONJAL" },
+  { url: "https://drive.google.com/file/d/1JkaetczF5e3f2LM9iNe37cojSD01ii4B/preview", title: "OONJAL", isGoogleDrive: true },
   { url: "https://www.youtube.com/embed/NNBcSQI2BVI", title: "Soul Diemention" },
 ];
 
@@ -114,8 +114,8 @@ const aiVideos = [
 
 const performanceVideos = {
   youtube: [
-    { url: "https://www.youtube.com/embed/aEx_N1BeYF4", title: "My Mimicry in SLIATE" },
-    { url: "https://www.youtube.com/embed/ojnSvKfnVqU", title: "My Singing Performance" },
+    { url: "https://drive.google.com/file/d/1af7b1aNFg7jNPTCg6e_ksNKQx5u5woim/preview", title: "My Mimicry in SLIATE", isGoogleDrive: true },
+    { url: "https://drive.google.com/file/d/1N_bBP2EaV_k-goCmCaIdYzo0p4mcOope/preview", title: "My Singing Performance", isGoogleDrive: true },
   ],
   googleDrive: [
     { url: "https://drive.google.com/file/d/1FNqtTLH8SqTXL3i0ghFPT7Equ4FKYhKb/preview", title: "My First Mimicry", isGoogleDrive: true },
@@ -220,7 +220,7 @@ export function Showcase() {
                 {shortFilms.map((video, i) => (
                   <div key={i} className="space-y-2">
                     <h3 className="text-lg font-semibold text-center text-foreground">{video.title}</h3>
-                    <VideoEmbed url={video.url} title={video.title} />
+                    <VideoEmbed url={video.url} title={video.title} isGoogleDrive={(video as any).isGoogleDrive} />
                   </div>
                 ))}
               </div>
