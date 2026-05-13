@@ -220,7 +220,7 @@ export function Showcase() {
                 {shortFilms.map((video, i) => (
                   <div key={i} className="space-y-2">
                     <h3 className="text-lg font-semibold text-center text-foreground">{video.title}</h3>
-                    <VideoEmbed url={video.url} title={video.title} />
+                    <VideoEmbed url={video.url} title={video.title} isGoogleDrive={(video as any).isGoogleDrive} />
                   </div>
                 ))}
               </div>
