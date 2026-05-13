@@ -58,10 +58,13 @@ export function Contact() {
             isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-3">
             Contact <span className="text-primary">Us</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-12" />
+          <p className="text-center text-muted-foreground max-w-xl mx-auto mb-6 text-base md:text-lg">
+            Contact us to elevate your brand with professional Video Services and AI-powered Content Creation.
+          </p>
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-8" />
 
           <div className="bg-card border border-border rounded-xl p-8 md:p-12">
             <form onSubmit={handleSubmit} className="space-y-6">
