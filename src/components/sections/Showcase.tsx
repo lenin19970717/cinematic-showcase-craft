@@ -114,8 +114,8 @@ const aiVideos = [
 
 const performanceVideos = {
   youtube: [
-    { url: "https://drive.google.com/file/d/1af7b1aNFg7jNPTCg6e_ksNKQx5u5woim/preview", title: "My Mimicry in SLIATE", isGoogleDrive: true },
-    { url: "https://drive.google.com/file/d/1N_bBP2EaV_k-goCmCaIdYzo0p4mcOope/preview", title: "My Singing Performance", isGoogleDrive: true },
+    { url: "https://drive.google.com/file/d/1N_bBP2EaV_k-goCmCaIdYzo0p4mcOope/preview", title: "My Mimicry in SLIATE", isGoogleDrive: true },
+    { url: "https://drive.google.com/file/d/1af7b1aNFg7jNPTCg6e_ksNKQx5u5woim/preview", title: "My Singing Performance", isGoogleDrive: true },
   ],
   googleDrive: [
     { url: "https://drive.google.com/file/d/1FNqtTLH8SqTXL3i0ghFPT7Equ4FKYhKb/preview", title: "My First Mimicry", isGoogleDrive: true },
