@@ -26,7 +26,7 @@ export function Education() {
   const { ref, isInView } = useInView();
 
   return (
-    <section id="education" className="py-20 md:py-32 px-4 bg-secondary/30 relative">
+    <section id="education" className="py-12 md:py-20 px-4 bg-secondary/30 relative">
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-neon-pink/10 rounded-full blur-[100px]" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
@@ -39,7 +39,7 @@ export function Education() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
             Educational <span className="text-primary">Qualifications</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-12" />
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-8" />
 
           <div className="grid md:grid-cols-3 gap-6">
             {educationItems.map((item, index) => (

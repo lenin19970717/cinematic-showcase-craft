@@ -29,7 +29,7 @@ export function Experience() {
   const { ref, isInView } = useInView();
 
   return (
-    <section id="experience" className="py-20 md:py-32 px-4 relative">
+    <section id="experience" className="py-12 md:py-20 px-4 relative">
       <div className="absolute top-1/2 right-0 w-72 h-72 bg-neon-orange/10 rounded-full blur-[100px]" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
@@ -42,7 +42,7 @@ export function Experience() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
             Work <span className="text-primary">Experience</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-12" />
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-8" />
 
           <div className="grid md:grid-cols-3 gap-6">
             {experienceItems.map((item, index) => (

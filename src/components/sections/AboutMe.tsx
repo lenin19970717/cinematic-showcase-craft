@@ -6,7 +6,7 @@ export function AboutMe() {
   const { ref, isInView } = useInView();
 
   return (
-    <section id="about-me" className="py-20 md:py-32 px-4 relative">
+    <section id="about-me" className="py-12 md:py-20 px-4 relative">
       {/* Background accent */}
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-neon-pink/10 rounded-full blur-[100px]" />
 
@@ -20,7 +20,7 @@ export function AboutMe() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
             About <span className="text-primary">Me</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-12" />
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-8" />
 
           <div className="bg-card border border-border rounded-xl p-8 md:p-12 shadow-lg hover:border-primary/30 transition-colors">
             {/* Profile Section */}
