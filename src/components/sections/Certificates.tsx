@@ -32,7 +32,7 @@ export function Certificates() {
   const { ref, isInView } = useInView();
 
   return (
-    <section className="py-20 md:py-32 px-4 bg-secondary/30 relative">
+    <section className="py-12 md:py-20 px-4 bg-secondary/30 relative">
       <div className="absolute top-0 left-1/4 w-72 h-72 bg-neon-purple/10 rounded-full blur-[100px]" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
@@ -45,7 +45,7 @@ export function Certificates() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
             Extracurricular <span className="text-primary">Achievements</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-12" />
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-8" />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {certificateItems.map((item, index) => (

@@ -52,7 +52,7 @@ export function SocialLinks() {
   const { ref, isInView } = useInView();
 
   return (
-    <section className="py-16 px-4 bg-secondary/30">
+    <section className="py-10 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-4xl">
         <div
           ref={ref}

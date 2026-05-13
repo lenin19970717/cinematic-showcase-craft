@@ -46,7 +46,7 @@ export function Hero() {
 
         {/* Tagline */}
         <p
-          className="text-lg md:text-xl text-muted-foreground mb-10 animate-fade-in-up"
+          className="text-lg md:text-xl text-muted-foreground mb-6 animate-fade-in-up"
           style={{ animationDelay: "0.3s" }}
         >
           Visual Storytelling | Filmmaking | AI Content Creation

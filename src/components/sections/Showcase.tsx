@@ -140,7 +140,7 @@ export function Showcase() {
   const [videoCategory, setVideoCategory] = useState<"greeny" | "blue" | "lightShadow">("greeny");
 
   return (
-    <section id="showcase" className="py-20 md:py-32 px-4 bg-secondary/30 relative">
+    <section id="showcase" className="py-12 md:py-20 px-4 bg-secondary/30 relative">
       <div className="absolute top-1/4 left-0 w-72 h-72 bg-neon-orange/10 rounded-full blur-[100px]" />
       <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-neon-purple/10 rounded-full blur-[100px]" />
 
@@ -154,7 +154,7 @@ export function Showcase() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
             Our <span className="text-primary">Portfolio</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-12" />
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-8" />
 
           <Tabs defaultValue="photography" className="w-full">
             <TabsList className="flex flex-wrap justify-center gap-2 bg-transparent h-auto mb-8">

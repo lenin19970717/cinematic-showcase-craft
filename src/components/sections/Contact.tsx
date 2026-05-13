@@ -47,7 +47,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32 px-4 relative">
+    <section id="contact" className="py-12 md:py-20 px-4 relative">
       <div className="absolute top-0 right-0 w-72 h-72 bg-neon-pink/10 rounded-full blur-[100px]" />
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-neon-purple/10 rounded-full blur-[100px]" />
 
