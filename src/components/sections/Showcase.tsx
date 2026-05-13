@@ -249,10 +249,10 @@ export function Showcase() {
             <TabsContent value="performance">
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-xl font-semibold text-center text-foreground mb-4">YouTube Performances</h3>
+                  <h3 className="text-xl font-semibold text-center text-foreground mb-3">Featured Performances</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     {performanceVideos.youtube.map((video, i) => (
-                      <VideoEmbed key={i} url={video.url} title={video.title} />
+                      <VideoEmbed key={i} url={video.url} title={video.title} isGoogleDrive />
                     ))}
                   </div>
                 </div>
