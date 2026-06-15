@@ -9,7 +9,7 @@
 
 @layer base {
   :root {
-    --background: 240 10% 4%;
+    --background: 0 0% 4%;
     --foreground: 0 0% 95%;
 
     --card: 240 10% 6%;
@@ -18,8 +18,8 @@
     --popover: 240 10% 6%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 270 80% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 28 100% 55%;
+    --primary-foreground: 0 0% 5%;
 
     --secondary: 240 10% 12%;
     --secondary-foreground: 0 0% 95%;
@@ -27,22 +27,22 @@
     --muted: 240 10% 15%;
     --muted-foreground: 240 5% 60%;
 
-    --accent: 330 90% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 240 10% 18%;
     --input: 240 10% 18%;
-    --ring: 270 80% 60%;
+    --ring: 28 100% 55%;
 
     --radius: 0.75rem;
 
     /* Neon glow colors */
-    --neon-purple: 270 80% 60%;
-    --neon-pink: 330 90% 55%;
-    --neon-orange: 30 100% 50%;
+    --neon-purple: 28 100% 55%;
+    --neon-pink: 45 100% 55%;
+    --neon-orange: 28 100% 55%;
 
     --sidebar-background: 240 10% 6%;
     --sidebar-foreground: 0 0% 95%;
@@ -55,7 +55,7 @@
   }
 
   .dark {
-    --background: 240 10% 4%;
+    --background: 0 0% 4%;
     --foreground: 0 0% 95%;
 
     --card: 240 10% 6%;
@@ -64,8 +64,8 @@
     --popover: 240 10% 6%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 270 80% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 28 100% 55%;
+    --primary-foreground: 0 0% 5%;
 
     --secondary: 240 10% 12%;
     --secondary-foreground: 0 0% 95%;
@@ -73,19 +73,19 @@
     --muted: 240 10% 15%;
     --muted-foreground: 240 5% 60%;
 
-    --accent: 330 90% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 240 10% 18%;
     --input: 240 10% 18%;
-    --ring: 270 80% 60%;
+    --ring: 28 100% 55%;
 
-    --neon-purple: 270 80% 60%;
-    --neon-pink: 330 90% 55%;
-    --neon-orange: 30 100% 50%;
+    --neon-purple: 28 100% 55%;
+    --neon-pink: 45 100% 55%;
+    --neon-orange: 28 100% 55%;
 
     --sidebar-background: 240 10% 6%;
     --sidebar-foreground: 0 0% 95%;

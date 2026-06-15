@@ -152,9 +152,15 @@ export function Showcase() {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Our <span className="text-primary">Portfolio</span>
+            Our{" "}
+            <span className="bg-gradient-to-r from-neon-orange to-yellow-400 bg-clip-text text-transparent">
+              Portfolio
+            </span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-8" />
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-6 text-sm md:text-base">
+            Real-world creative work — videography, photography, short films, and AI-driven content.
+          </p>
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-orange to-yellow-400 mx-auto mb-8" />
 
           <Tabs defaultValue="photography" className="w-full">
             <TabsList className="flex flex-wrap justify-center gap-2 bg-transparent h-auto mb-8">
