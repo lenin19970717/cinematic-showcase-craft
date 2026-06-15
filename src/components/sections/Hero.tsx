@@ -1,13 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import logo from "@/assets/logo.png";
+import framelenFull from "@/assets/framelen-full.png.asset.json";
 
 export function Hero() {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -15,44 +13,45 @@ export function Hero() {
       id="home"
       className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4"
     >
-      {/* Background gradient effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
-      <div className="absolute top-1/4 -left-32 w-64 h-64 bg-neon-purple/20 rounded-full blur-[100px]" />
-      <div className="absolute bottom-1/4 -right-32 w-64 h-64 bg-neon-pink/20 rounded-full blur-[100px]" />
+      <div className="absolute top-1/4 -left-32 w-64 h-64 bg-neon-orange/20 rounded-full blur-[100px]" />
+      <div className="absolute bottom-1/4 -right-32 w-64 h-64 bg-yellow-500/15 rounded-full blur-[100px]" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-neon-orange/10 rounded-full blur-[120px]" />
 
-      {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto">
-        {/* Logo with glow */}
+      <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">
         <div className="mb-8 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-          <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto">
-            <div className="absolute inset-0 rounded-full border-4 border-primary animate-glow-pulse" />
-            <div className="absolute inset-[-4px] rounded-full border-2 border-neon-pink/50 animate-glow-pulse" style={{ animationDelay: "0.5s" }} />
-            <img
-              src={logo}
-              alt="Lenin's Visual Logo"
-              className="w-full h-full rounded-full drop-shadow-[0_0_30px_hsl(270,80%,60%,0.5)]"
-            />
-          </div>
+          <img
+            src={framelenFull.url}
+            alt="FrameLEN Media"
+            className="h-24 md:h-32 lg:h-40 w-auto mx-auto drop-shadow-[0_0_40px_rgba(255,140,0,0.35)]"
+          />
         </div>
 
-        {/* Title */}
         <h1
-          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-neon-purple via-neon-pink to-neon-orange bg-clip-text text-transparent animate-fade-in-up"
+          className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in-up leading-tight"
           style={{ animationDelay: "0.2s" }}
         >
-          LENIN'S VISUAL
+          Every Brand Has A Story.{" "}
+          <span className="bg-gradient-to-r from-neon-orange to-yellow-400 bg-clip-text text-transparent">
+            We Help Tell It.
+          </span>
         </h1>
 
-        {/* Tagline */}
         <p
-          className="text-lg md:text-xl text-muted-foreground mb-6 animate-fade-in-up"
+          className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 animate-fade-in-up"
           style={{ animationDelay: "0.3s" }}
         >
-          Visual Storytelling | Filmmaking | AI Content Creation
+          FrameLEN Media creates powerful visual content through storytelling, videography,
+          photography, and content production.
         </p>
 
-        {/* CTA Buttons */}
+        <p
+          className="text-xs md:text-sm uppercase tracking-[0.25em] text-muted-foreground/70 mb-8 animate-fade-in-up"
+          style={{ animationDelay: "0.35s" }}
+        >
+          Content Creation · Storytelling · Visual Impact
+        </p>
+
         <div
           className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up"
           style={{ animationDelay: "0.4s" }}
@@ -60,7 +59,7 @@ export function Hero() {
           <Button
             size="lg"
             onClick={() => scrollToSection("#showcase")}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg shadow-[0_0_20px_hsl(270,80%,60%,0.4)] hover:shadow-[0_0_30px_hsl(270,80%,60%,0.6)] transition-all"
+            className="bg-gradient-to-r from-neon-orange to-yellow-500 hover:opacity-90 text-black font-semibold px-8 py-6 text-lg shadow-[0_0_25px_rgba(255,140,0,0.45)] hover:shadow-[0_0_35px_rgba(255,140,0,0.7)] transition-all"
           >
             View Portfolio
           </Button>
@@ -68,17 +67,17 @@ export function Hero() {
             size="lg"
             variant="outline"
             onClick={() => scrollToSection("#contact")}
-            className="border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary px-8 py-6 text-lg transition-all"
+            className="border-neon-orange/50 text-foreground hover:bg-neon-orange/10 hover:border-neon-orange px-8 py-6 text-lg transition-all"
           >
-            Contact Us
+            Work With Us
           </Button>
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <button
         onClick={() => scrollToSection("#about")}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-bounce"
+        aria-label="Scroll down"
       >
         <ChevronDown size={32} />
       </button>

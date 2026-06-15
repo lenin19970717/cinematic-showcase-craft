@@ -5,8 +5,7 @@ export function About() {
 
   return (
     <section id="about" className="py-12 md:py-20 px-4 relative">
-      {/* Background accent */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-neon-purple/10 rounded-full blur-[100px]" />
+      <div className="absolute top-0 right-0 w-72 h-72 bg-neon-orange/10 rounded-full blur-[100px]" />
 
       <div className="container mx-auto max-w-4xl relative z-10">
         <div
@@ -16,24 +15,23 @@ export function About() {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            About <span className="text-primary">Us</span>
+            Who{" "}
+            <span className="bg-gradient-to-r from-neon-orange to-yellow-400 bg-clip-text text-transparent">
+              We Are
+            </span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-8" />
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-orange to-yellow-400 mx-auto mb-8" />
 
-          <div className="bg-card border border-border rounded-xl p-8 md:p-12 shadow-lg hover:border-primary/30 transition-colors">
+          <div className="bg-card border border-border rounded-xl p-8 md:p-12 shadow-lg hover:border-neon-orange/40 transition-colors">
             <p className="text-muted-foreground text-lg leading-relaxed">
-              <span className="text-primary font-semibold">LENIN'S VISUAL</span> is a creative 
-              production company specializing in visual storytelling across videography, photography, 
-              filmmaking, and AI-driven content creation. We transform ideas and emotions into 
-              impactful visual stories. Our services include cinematography, video editing, short 
-              film production, photography, digital art, and AI image and video generation. With 
-              hands-on experience through diverse projects and creative collaborations, we 
-              continuously explore creative and technological boundaries to deliver meaningful 
-              visual experiences for our clients.
+              <span className="text-foreground font-semibold">FrameLEN Media</span> is a creative
+              media studio focused on visual storytelling, content creation, videography,
+              photography, and brand-focused content production.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed mt-6">
-              I started this with no resources. But with the little help I got to showcase my talent, 
-              I created these works. From now on, if I get better resources, I can create even better works.
+              We help businesses, creators, and organizations communicate their stories through
+              impactful visual experiences — combining cinematic craft with modern, mobile-first
+              production for brands of every size.
             </p>
           </div>
         </div>

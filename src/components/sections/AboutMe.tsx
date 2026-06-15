@@ -1,6 +1,6 @@
 import { useInView } from "@/hooks/useInView";
-import { User, GraduationCap, Briefcase, Clock } from "lucide-react";
-import logo from "@/assets/logo.png";
+import { GraduationCap, Briefcase, Clock } from "lucide-react";
+import framelenIcon from "@/assets/framelen-icon.png.asset.json";
 
 export function AboutMe() {
   const { ref, isInView } = useInView();
@@ -18,31 +18,34 @@ export function AboutMe() {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            About <span className="text-primary">Me</span>
+            Meet The{" "}
+            <span className="bg-gradient-to-r from-neon-orange to-yellow-400 bg-clip-text text-transparent">
+              Founder
+            </span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-8" />
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-orange to-yellow-400 mx-auto mb-8" />
 
-          <div className="bg-card border border-border rounded-xl p-8 md:p-12 shadow-lg hover:border-primary/30 transition-colors">
-            {/* Profile Section */}
+          <div className="bg-card border border-border rounded-xl p-8 md:p-12 shadow-lg hover:border-neon-orange/40 transition-colors">
             <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
-              {/* Logo with glow circle */}
               <div className="relative w-32 h-32 flex-shrink-0">
-                <div className="absolute inset-0 rounded-full border-4 border-primary animate-glow-pulse" />
-                <div className="absolute inset-[-4px] rounded-full border-2 border-neon-pink/50 animate-glow-pulse" style={{ animationDelay: "0.5s" }} />
+                <div className="absolute inset-0 rounded-full border-4 border-neon-orange animate-glow-pulse" />
+                <div className="absolute inset-[-4px] rounded-full border-2 border-yellow-400/50 animate-glow-pulse" style={{ animationDelay: "0.5s" }} />
                 <img
-                  src={logo}
-                  alt="Lenin"
+                  src={framelenIcon.url}
+                  alt="Lenin Nagesh — FrameLEN Media"
                   className="w-full h-full rounded-full object-cover"
                 />
               </div>
 
-              {/* Intro */}
               <div className="text-center md:text-left">
                 <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                  Hi.. I am <span className="text-primary">LENIN</span>
+                  Hi, I'm{" "}
+                  <span className="bg-gradient-to-r from-neon-orange to-yellow-400 bg-clip-text text-transparent">
+                    Lenin Nagesh
+                  </span>
                 </h3>
-                <p className="text-xl text-muted-foreground">
-                  Digital Content Creator
+                <p className="text-lg text-muted-foreground">
+                  Founder · FrameLEN Media & GenLEN
                 </p>
               </div>
             </div>

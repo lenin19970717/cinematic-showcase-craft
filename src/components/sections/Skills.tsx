@@ -1,26 +1,18 @@
 import { useInView } from "@/hooks/useInView";
 import {
-  Video,
-  Camera,
-  Film,
-  Pencil,
-  Clapperboard,
-  Sparkles,
-  Play,
-  Mic,
-  Share2,
+  Video, Camera, Film, Share2, Megaphone, Clapperboard, Sparkles, Compass, BookOpen,
 } from "lucide-react";
 
-const skills = [
-  { icon: Video, label: "Videography", color: "primary" },
-  { icon: Camera, label: "Photography", color: "accent" },
-  { icon: Film, label: "Video Editing", color: "primary" },
-  { icon: Share2, label: "Content Creation", color: "accent" },
-  { icon: Pencil, label: "Drawing & Art", color: "primary" },
-  { icon: Clapperboard, label: "Film Making", color: "accent" },
-  { icon: Sparkles, label: "AI Image Creation", color: "primary" },
-  { icon: Play, label: "AI Video Creation", color: "accent" },
-  { icon: Mic, label: "Stage Performance", color: "primary" },
+const services = [
+  { icon: BookOpen, label: "Visual Storytelling" },
+  { icon: Video, label: "Videography" },
+  { icon: Camera, label: "Photography" },
+  { icon: Share2, label: "Social Media Content" },
+  { icon: Megaphone, label: "Brand Storytelling" },
+  { icon: Clapperboard, label: "Documentary Production" },
+  { icon: Sparkles, label: "Creative Design" },
+  { icon: Compass, label: "Content Strategy" },
+  { icon: Film, label: "Video Editing" },
 ];
 
 export function Skills() {
@@ -28,7 +20,7 @@ export function Skills() {
 
   return (
     <section id="skills" className="py-12 md:py-20 px-4 relative">
-      <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-neon-pink/10 rounded-full blur-[100px]" />
+      <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-yellow-500/10 rounded-full blur-[100px]" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <div
@@ -38,29 +30,24 @@ export function Skills() {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Our <span className="text-primary">Services</span>
+            What{" "}
+            <span className="bg-gradient-to-r from-neon-orange to-yellow-400 bg-clip-text text-transparent">
+              We Do
+            </span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-neon-purple to-neon-pink mx-auto mb-8" />
+          <div className="w-20 h-1 bg-gradient-to-r from-neon-orange to-yellow-400 mx-auto mb-8" />
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
-            {skills.map((skill, index) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+            {services.map((s, index) => (
               <div
-                key={skill.label}
-                className="bg-card border border-border rounded-lg p-3 md:p-4 text-center hover:border-primary/50 hover:-translate-y-1 hover:shadow-[0_0_20px_hsl(270,80%,60%,0.2)] transition-all duration-300 group cursor-default"
+                key={s.label}
+                className="group relative bg-card border border-border rounded-xl p-5 text-center hover:border-neon-orange/50 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(255,140,0,0.2)] transition-all duration-300"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div
-                  className={`w-6 h-6 md:w-8 md:h-8 rounded-md ${
-                    skill.color === "primary" ? "bg-primary/10" : "bg-accent/10"
-                  } flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <skill.icon
-                    className={`w-3 h-3 md:w-4 md:h-4 ${
-                      skill.color === "primary" ? "text-primary" : "text-accent"
-                    }`}
-                  />
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-neon-orange/20 to-yellow-500/10 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                  <s.icon className="w-5 h-5 text-neon-orange" />
                 </div>
-                <p className="text-xs md:text-sm text-foreground font-medium">{skill.label}</p>
+                <p className="text-sm font-medium text-foreground">{s.label}</p>
               </div>
             ))}
           </div>

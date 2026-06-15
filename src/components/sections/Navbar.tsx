@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png";
+import framelenIcon from "@/assets/framelen-icon.png.asset.json";
 
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Services", href: "#skills" },
+  { label: "GenLEN", href: "#genlen" },
   { label: "Portfolio", href: "#showcase" },
+  { label: "Why Us", href: "#why" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -15,18 +17,14 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (element) element.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
   };
 
@@ -40,22 +38,21 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
           <button
             onClick={() => scrollToSection("#home")}
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
             <div className="relative h-10 w-10 md:h-12 md:w-12">
               <div className="absolute inset-0 rounded-full border-2 border-primary animate-glow-pulse" />
-              <img src={logo} alt="Lenin's Visual" className="h-full w-full rounded-full" />
+              <img src={framelenIcon.url} alt="FrameLEN Media" className="h-full w-full rounded-full object-cover" />
             </div>
-            <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-neon-purple via-neon-pink to-neon-orange bg-clip-text text-transparent">
-              LENIN'S VISUAL
+            <span className="text-base md:text-xl font-bold tracking-tight">
+              Frame<span className="bg-gradient-to-r from-neon-orange to-yellow-400 bg-clip-text text-transparent">LEN</span>
+              <span className="text-muted-foreground font-normal text-xs md:text-sm ml-1">Media</span>
             </span>
           </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -63,23 +60,21 @@ export function Navbar() {
                 className="text-sm text-muted-foreground hover:text-primary transition-colors relative group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-neon-orange to-yellow-400 transition-all group-hover:w-full" />
               </button>
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border animate-fade-in">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border animate-fade-in">
             <div className="flex flex-col py-4">
               {navLinks.map((link) => (
                 <button
