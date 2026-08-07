@@ -1,6 +1,6 @@
 import { useInView } from "@/hooks/useInView";
 import { Sparkles, Video, Megaphone, BookOpen, Share2, Wand2 } from "lucide-react";
-import genlenFull from "@/assets/genlen-full.png.asset.json";
+
 
 const aiServices = [
   { icon: Video, label: "AI Promotional Videos" },
@@ -32,8 +32,13 @@ export function GenLEN() {
               <Sparkles className="w-3.5 h-3.5" /> Introducing
             </span>
             <div className="flex justify-center mb-4">
-              <img src={genlenFull.url} alt="GenLEN — AI Content & Media Solutions" className="h-20 md:h-28 w-auto drop-shadow-[0_0_40px_rgba(255,180,0,0.35)]" />
+              <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-none drop-shadow-[0_0_40px_rgba(255,180,0,0.25)]">
+                Gen<span className="bg-gradient-to-r from-neon-orange to-yellow-400 bg-clip-text text-transparent">LEN</span>
+              </h2>
             </div>
+            <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-muted-foreground mb-4">
+              AI Content &amp; Media Solutions
+            </p>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               GenLEN helps small and medium-sized businesses access affordable AI-powered content
               solutions without the high costs of traditional production.
