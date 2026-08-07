@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import framelenFull from "@/assets/framelen-full.png.asset.json";
+import framelenLogo from "@/assets/framelen-logo-plain.png";
 
 export function Hero() {
   const scrollToSection = (href: string) => {
@@ -21,7 +21,7 @@ export function Hero() {
       <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">
         <div className="mb-8 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
           <img
-            src={framelenFull.url}
+            src={framelenLogo}
             alt="FrameLEN Media"
             className="h-24 md:h-32 lg:h-40 w-auto mx-auto drop-shadow-[0_0_40px_rgba(255,140,0,0.35)]"
           />
