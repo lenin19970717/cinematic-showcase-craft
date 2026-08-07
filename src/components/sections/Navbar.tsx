@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import framelenLogo from "@/assets/framelen-logo.jpg.asset.json";
+import framelenLogo from "@/assets/framelen-logo-transparent.png.asset.json";
 
 const navLinks = [
   { label: "Home", href: "#home" },
