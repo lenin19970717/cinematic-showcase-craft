@@ -1,6 +1,6 @@
 import { useInView } from "@/hooks/useInView";
 import { Sparkles, Video, Megaphone, BookOpen, Share2, Wand2 } from "lucide-react";
-import genlenFull from "@/assets/genlen-full.png.asset.json";
+
 
 const aiServices = [
   { icon: Video, label: "AI Promotional Videos" },
