@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Camera, Video, Clapperboard, Pencil, Sparkles, Play, Mic } from "lucide-react";
 import { ImageGallery } from "@/components/gallery/ImageGallery";
 import { VideoEmbed } from "@/components/gallery/VideoEmbed";
+import { CreativeJourney } from "@/components/sections/CreativeJourney";
 
 // Import photography images - Wildlife
 import wildlifePhoto from "@/assets/wildlife.jpg";
@@ -161,6 +162,8 @@ export function Showcase() {
             Real-world creative work — videography, photography, short films, and AI-driven content.
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-neon-orange to-yellow-400 mx-auto mb-8" />
+
+          <CreativeJourney />
 
           <Tabs defaultValue="photography" className="w-full">
             <TabsList className="flex flex-wrap justify-center gap-2 bg-transparent h-auto mb-8">
