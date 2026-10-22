@@ -164,10 +164,10 @@ export function CreativeJourney() {
             </div>
           </div>
 
-          {internship.youtubeEmbedPlaylistId && (
+          {internship.youtubeEmbedUrl && (
             <div className="lg:col-span-3 aspect-video rounded-xl overflow-hidden border border-border bg-card">
               <iframe
-                src={`https://www.youtube.com/embed/videoseries?list=${internship.youtubeEmbedPlaylistId}`}
+                src={internship.youtubeEmbedUrl}
                 title="Yarl IT Hub internship videos"
                 className="w-full h-full"
                 loading="lazy"

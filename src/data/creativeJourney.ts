@@ -22,8 +22,9 @@ export const internship = {
   startDate: "2025-04-28", // YYYY-MM-DD
   endDate: "2026-01-10", // YYYY-MM-DD
   youtubeChannelUrl: "https://www.youtube.com/@YITExperiments",
-  // Uploads playlist of the channel above (UU + channel ID without "UC"). Set to "" to hide the embedded player.
-  youtubeEmbedPlaylistId: "UU0-YGnOBS6JrgrTlbIeR0HA",
+  // Video shown in the internship player (embed form of the link you provided). Set to "" to hide the player.
+  youtubeVideoUrl: "https://youtu.be/0l1SG-zqfrY?si=LcSQs6maySYNRjmz",
+  youtubeEmbedUrl: "https://www.youtube.com/embed/0l1SG-zqfrY",
   description:
     "During my Content Creator Internship at Yarl IT Hub, I gained practical experience in content creation, video production, editing, and digital storytelling. This collection showcases the videos and creative projects I produced during my internship.",
   // Add individual internship videos here (title, role, url, optional description/thumbnail).
