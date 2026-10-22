@@ -1,4 +1,4 @@
-import { Briefcase, Clapperboard, ExternalLink, Film, GraduationCap, HeartHandshake, Sparkles, Youtube } from "lucide-react";
+import { Briefcase, Clapperboard, ExternalLink, Film, GraduationCap, Sparkles, Youtube } from "lucide-react";
 import {
   internship,
   volunteeringAiVideos,
@@ -228,4 +228,3 @@ export function CreativeJourney() {
   );
 }
 
-export { HeartHandshake };
