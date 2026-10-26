@@ -4,35 +4,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Camera, Video, Clapperboard, Pencil, Sparkles, Play, Mic } from "lucide-react";
 import { ImageGallery } from "@/components/gallery/ImageGallery";
 import { VideoEmbed } from "@/components/gallery/VideoEmbed";
+import { PhotographyGallery } from "@/components/gallery/PhotographyGallery";
 import { CreativeJourney } from "@/components/sections/CreativeJourney";
-
-// Import photography images - Wildlife
-import wildlifePhoto from "@/assets/wildlife.jpg";
-import wildlifeOwl from "@/assets/wildlife-owl.jpg";
-import wildlifeKite from "@/assets/wildlife-kite.jpg";
-import wildlifeEgret from "@/assets/wildlife-egret.jpg";
-import wildlifeEgrets from "@/assets/wildlife-egrets.jpg";
-
-// Import photography images - Nature
-import naturePhoto from "@/assets/nature.jpg";
-import natureJellyfish from "@/assets/nature-jellyfish.jpg";
-import natureBeachBoat from "@/assets/nature-beach-boat.jpg";
-import natureRocksSea from "@/assets/nature-rocks-sea.jpg";
-import natureLakeTree from "@/assets/nature-lake-tree.jpg";
-import natureCoastalRocks from "@/assets/nature-coastal-rocks.jpg";
-import natureWetlandSunset from "@/assets/nature-wetland-sunset.jpg";
-
-// Import photography images - Portraits
-import portraitPhoto from "@/assets/portrait.jpg";
-
-// Import photography images - Dark Night
-import darknightMoon from "@/assets/darknight-moon.jpg";
-import darknightSunsetSea from "@/assets/darknight-sunset-sea.jpg";
-
-// Import silhouette photos
-import silhouetteField from "@/assets/silhouette-field.jpg";
-import silhouetteSunset1 from "@/assets/silhouette-sunset-1.jpg";
-import silhouetteSunset2 from "@/assets/silhouette-sunset-2.jpg";
 
 // Import AI photos
 import aiPhoto1 from "@/assets/ai-photo-1.jpg";
@@ -47,35 +20,6 @@ import drawing4 from "@/assets/drawing-4.jpg";
 
 // Import AI Video thumbnail
 import kannukullaThumbnail from "@/assets/kannukulla-thumbnail.jpg";
-
-const photographyCategories = {
-  wildlife: [
-    { src: wildlifePhoto, alt: "Wildlife - Bird Photography" },
-    { src: wildlifeOwl, alt: "Wildlife - Owl on Ground" },
-    { src: wildlifeKite, alt: "Wildlife - Brahminy Kite" },
-    { src: wildlifeEgret, alt: "Wildlife - Great Egret" },
-    { src: wildlifeEgrets, alt: "Wildlife - Egrets in Grass" },
-  ],
-  nature: [
-    { src: naturePhoto, alt: "Nature - Green Grass" },
-    { src: natureJellyfish, alt: "Nature - Jellyfish on Beach" },
-    { src: natureBeachBoat, alt: "Nature - Beach with Boat" },
-    { src: natureRocksSea, alt: "Nature - Rocky Coastline" },
-    { src: natureLakeTree, alt: "Nature - Lake with Tree" },
-    { src: natureCoastalRocks, alt: "Nature - Coastal Rocks" },
-    { src: natureWetlandSunset, alt: "Nature - Wetland at Sunset" },
-  ],
-  portraits: [
-    { src: portraitPhoto, alt: "Portrait - Child studying by candlelight" },
-    { src: silhouetteField, alt: "Silhouette - Boy in Field with Dramatic Sky" },
-    { src: silhouetteSunset1, alt: "Silhouette - Person at Sunset by Water" },
-    { src: silhouetteSunset2, alt: "Silhouette - Friends at Sunset" },
-  ],
-  darknight: [
-    { src: darknightMoon, alt: "Dark Night - Half Moon" },
-    { src: darknightSunsetSea, alt: "Dark Night - Sunset over Sea" },
-  ],
-};
 
 const videographyCategories = {
   greeny: [
@@ -137,7 +81,6 @@ const showcaseTabs = [
 
 export function Showcase() {
   const { ref, isInView } = useInView();
-  const [photoCategory, setPhotoCategory] = useState<"wildlife" | "nature" | "portraits" | "darknight">("wildlife");
   const [videoCategory, setVideoCategory] = useState<"greeny" | "blue" | "lightShadow">("greeny");
 
   return (
@@ -181,22 +124,7 @@ export function Showcase() {
 
             {/* Photography */}
             <TabsContent value="photography">
-              <div className="mb-6 flex flex-wrap justify-center gap-2">
-                {(["wildlife", "nature", "portraits", "darknight"] as const).map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setPhotoCategory(cat)}
-                    className={`px-4 py-2 rounded-lg text-sm transition-colors ${
-                      photoCategory === cat
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-card border border-border text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    {cat === "darknight" ? "Dark Night" : cat.charAt(0).toUpperCase() + cat.slice(1)}
-                  </button>
-                ))}
-              </div>
-              <ImageGallery images={photographyCategories[photoCategory]} />
+              <PhotographyGallery />
             </TabsContent>
 
             {/* Videography */}

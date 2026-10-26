@@ -150,7 +150,7 @@ export function PhotographyGallery() {
           aria-modal="true"
           aria-label={`${category.name} photo viewer`}
           className={cn(
-            "fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-md transition-opacity duration-250",
+            "fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-md transition-opacity duration-300",
             visible ? "opacity-100" : "opacity-0"
           )}
           onClick={close}
