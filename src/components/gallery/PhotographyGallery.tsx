@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { photographyManifest, type PhotoEntry } from "@/data/photographyManifest";
 import { cn } from "@/lib/utils";
@@ -144,13 +145,13 @@ export function PhotographyGallery() {
       </div>
 
       {/* Lightbox viewer */}
-      {current && openIndex !== null && (
+      {current && openIndex !== null && createPortal(
         <div
           role="dialog"
           aria-modal="true"
           aria-label={`${category.name} photo viewer`}
           className={cn(
-            "fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-md transition-opacity duration-300",
+            "fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-md transition-opacity duration-300",
             visible ? "opacity-100" : "opacity-0"
           )}
           onClick={close}
@@ -230,7 +231,8 @@ export function PhotographyGallery() {
             <span className="text-primary">{openIndex + 1}</span> / {photos.length}
             <span className="ml-2 text-muted-foreground/60">· {category.name}</span>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
