@@ -1361,16 +1361,58 @@ export const photographyManifest: PhotoCategory[] = [
     "name": "Water",
     "photos": [
       {
-        "file": "20190901_170720.jpg",
-        "key": "water/20190901_170720",
-        "w": 675,
-        "h": 900
+        "file": "20190818_171245.jpg",
+        "key": "water/20190818_171245",
+        "w": 900,
+        "h": 674
       },
       {
-        "file": "20190908_204456.jpg",
-        "key": "water/20190908_204456",
+        "file": "20190819_100910.jpg",
+        "key": "water/20190819_100910",
+        "w": 900,
+        "h": 675
+      },
+      {
+        "file": "20190819_100932.jpg",
+        "key": "water/20190819_100932",
+        "w": 900,
+        "h": 675
+      },
+      {
+        "file": "IMG_0188.JPG",
+        "key": "water/IMG_0188",
         "w": 900,
         "h": 506
+      },
+      {
+        "file": "Picture2.png",
+        "key": "water/Picture2",
+        "w": 361,
+        "h": 257
+      },
+      {
+        "file": "Picture3.jpg",
+        "key": "water/Picture3",
+        "w": 316,
+        "h": 237
+      },
+      {
+        "file": "Picture5.png",
+        "key": "water/Picture5",
+        "w": 349,
+        "h": 269
+      },
+      {
+        "file": "Picture6.png",
+        "key": "water/Picture6",
+        "w": 402,
+        "h": 269
+      },
+      {
+        "file": "Picture9.jpg",
+        "key": "water/Picture9",
+        "w": 298,
+        "h": 224
       }
     ]
   }
