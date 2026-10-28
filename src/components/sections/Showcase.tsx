@@ -5,6 +5,7 @@ import { Camera, Video, Clapperboard, Pencil, Sparkles, Play, Mic } from "lucide
 import { ImageGallery } from "@/components/gallery/ImageGallery";
 import { VideoEmbed } from "@/components/gallery/VideoEmbed";
 import { PhotographyGallery } from "@/components/gallery/PhotographyGallery";
+import { VideographyPortfolio } from "@/components/gallery/VideographyPortfolio";
 import { CreativeJourney } from "@/components/sections/CreativeJourney";
 
 // Import AI photos
@@ -129,26 +130,28 @@ export function Showcase() {
 
             {/* Videography */}
             <TabsContent value="videography">
-              <div className="mb-6 flex justify-center gap-2">
-                {(["greeny", "blue", "lightShadow"] as const).map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setVideoCategory(cat)}
-                    className={`px-4 py-2 rounded-lg text-sm transition-colors ${
-                      videoCategory === cat
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-card border border-border text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    {cat === "lightShadow" ? "Light & Shadow" : cat.charAt(0).toUpperCase() + cat.slice(1)}
-                  </button>
-                ))}
-              </div>
-              <div className="max-w-2xl mx-auto">
-                {videographyCategories[videoCategory].map((video, i) => (
-                  <VideoEmbed key={i} url={video.url} title={video.title} isShort />
-                ))}
-              </div>
+              <VideographyPortfolio>
+                <div className="mb-6 flex justify-center gap-2">
+                  {(["greeny", "blue", "lightShadow"] as const).map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setVideoCategory(cat)}
+                      className={`px-4 py-2 rounded-lg text-sm transition-colors ${
+                        videoCategory === cat
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-card border border-border text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {cat === "lightShadow" ? "Light & Shadow" : cat.charAt(0).toUpperCase() + cat.slice(1)}
+                    </button>
+                  ))}
+                </div>
+                <div className="max-w-2xl mx-auto">
+                  {videographyCategories[videoCategory].map((video, i) => (
+                    <VideoEmbed key={i} url={video.url} title={video.title} isShort />
+                  ))}
+                </div>
+              </VideographyPortfolio>
             </TabsContent>
 
             {/* Short Films */}

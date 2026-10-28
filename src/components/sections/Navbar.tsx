@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import framelenLogo from "@/assets/framelen-logo-transparent.png.asset.json";
+import framelenLogo from "@/assets/framesoflenin-logo.png.asset.json";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -42,10 +42,13 @@ export function Navbar() {
             onClick={() => scrollToSection("#home")}
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
-            <div className="relative h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full overflow-hidden">
-              <div className="absolute inset-0 rounded-full border-2 border-primary animate-glow-pulse" />
-              <img src={framelenLogo.url} alt="FrameLEN Media" className="h-full w-full object-cover" />
-            </div>
+            <img
+              src={framelenLogo.url}
+              alt="Frames of LENIN — Stories within every frame"
+              width={480}
+              height={346}
+              className="h-10 md:h-12 w-auto object-contain"
+            />
             <span className="text-base md:text-xl font-bold tracking-tight">
               Frame<span className="bg-gradient-to-r from-neon-orange to-yellow-400 bg-clip-text text-transparent">LEN</span>
               <span className="text-muted-foreground font-normal text-xs md:text-sm ml-1">Media</span>

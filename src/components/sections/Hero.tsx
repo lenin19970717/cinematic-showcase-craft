@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import framelenLogo from "@/assets/framelen-logo-plain.png";
+import profilePhoto from "@/assets/lenin-profile.webp.asset.json";
 
 export function Hero() {
   const scrollToSection = (href: string) => {
@@ -19,12 +19,26 @@ export function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-neon-orange/10 rounded-full blur-[120px]" />
 
       <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">
-        <div className="mb-8 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-          <img
-            src={framelenLogo}
-            alt="FrameLEN Media"
-            className="h-24 md:h-32 lg:h-40 w-auto mx-auto drop-shadow-[0_0_40px_rgba(255,140,0,0.35)]"
-          />
+        <div className="mb-8 flex flex-col items-center animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+          <div className="relative h-32 w-32 md:h-40 md:w-40 lg:h-44 lg:w-44">
+            <div className="absolute -inset-4 rounded-full bg-neon-orange/25 blur-2xl" />
+            <div className="relative h-full w-full rounded-full bg-gradient-to-br from-neon-orange via-yellow-400 to-neon-orange p-[3px] shadow-[0_0_25px_hsl(var(--neon-orange)/0.6),0_0_60px_hsl(var(--neon-orange)/0.3)]">
+              <img
+                src={profilePhoto.url}
+                alt="LENIN Nageshwaran"
+                width={1920}
+                height={1280}
+                className="h-full w-full rounded-full border-2 border-background object-cover"
+                style={{ objectPosition: "94% 40%" }}
+              />
+            </div>
+          </div>
+          <p className="mt-4 text-xl md:text-2xl font-bold tracking-wide text-foreground">
+            LENIN Nageshwaran
+          </p>
+          <p className="mt-1 text-xs md:text-sm uppercase tracking-[0.2em] text-primary/90">
+            Visual Storyteller Enthusiast
+          </p>
         </div>
 
         <h1

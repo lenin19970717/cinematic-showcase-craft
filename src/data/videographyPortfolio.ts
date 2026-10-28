@@ -80,13 +80,13 @@ export const channelPlaylists: YouTubePlaylist[] = [
     "id": "PLLZLGcSjZG2i2UxG7m2xXw2NuzhMG7cBn",
     "title": "story telling",
     "count": 7,
-    "coverVideoId": "TEuLrN2eksk"
+    "coverVideoId": "EO_z3LFccB8"
   },
   {
     "id": "PLLZLGcSjZG2j1HuCsZkdPSNAToflIe23V",
     "title": "Videography",
     "count": 90,
-    "coverVideoId": "TEuLrN2eksk"
+    "coverVideoId": "hdD-sCCUfLo"
   }
 ];
 
