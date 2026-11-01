@@ -119,9 +119,10 @@ export function CreativeJourney() {
 
       {/* 1. Former Internship */}
       <div>
-        <SubHeading eyebrow="01 · Internship" title="Former Internship at Yarl IT Hub">
-          {internship.description}
-        </SubHeading>
+        <SubHeading eyebrow="01 · Internship" title="8 Months at Yarl IT Hub" />
+        <div className="mb-6">
+          <YarlExperience />
+        </div>
 
         <div className="grid lg:grid-cols-5 gap-6 items-start">
           <div className="lg:col-span-2 bg-card/60 backdrop-blur border border-border rounded-xl p-5 space-y-3">
