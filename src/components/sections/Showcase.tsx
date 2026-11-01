@@ -115,10 +115,10 @@ export function Showcase() {
                 <TabsTrigger
                   key={tab.value}
                   value={tab.value}
-                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground bg-card border border-border px-4 py-2 rounded-lg flex items-center gap-2"
+                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground bg-card border border-border px-3 py-2 sm:px-4 rounded-lg flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm min-h-[40px]"
                 >
                   <tab.icon className="w-4 h-4" />
-                  <span className="hidden sm:inline">{tab.label}</span>
+                  <span>{tab.label}</span>
                 </TabsTrigger>
               ))}
             </TabsList>
