@@ -58,7 +58,7 @@ export function Contact() {
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-neon-orange to-yellow-400 mx-auto mb-8" />
 
-          <div className="bg-card border border-border rounded-xl p-8 md:p-12">
+          <div className="bg-card border border-border rounded-xl p-5 sm:p-8 md:p-12">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-5">
                 <div className="space-y-2">

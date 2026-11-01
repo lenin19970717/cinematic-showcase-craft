@@ -25,8 +25,8 @@ export function AboutMe() {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-neon-orange to-yellow-400 mx-auto mb-8" />
 
-          <div className="bg-card border border-border rounded-xl p-8 md:p-12 shadow-lg hover:border-neon-orange/40 transition-colors">
-            <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
+          <div className="bg-card border border-border rounded-xl p-5 sm:p-8 md:p-12 shadow-lg hover:border-neon-orange/40 transition-colors">
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 mb-6 md:mb-8">
               <div className="relative w-32 h-32 flex-shrink-0">
                 <div className="absolute inset-0 rounded-full border-4 border-neon-orange animate-glow-pulse" />
                 <div className="absolute inset-[-4px] rounded-full border-2 border-yellow-400/50 animate-glow-pulse" style={{ animationDelay: "0.5s" }} />
