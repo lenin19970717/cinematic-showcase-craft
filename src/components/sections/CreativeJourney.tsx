@@ -1,4 +1,5 @@
 import { Briefcase, Clapperboard, ExternalLink, Film, GraduationCap, Sparkles, Youtube } from "lucide-react";
+import { YarlExperience } from "./YarlExperience";
 import {
   internship,
   volunteeringAiVideos,
