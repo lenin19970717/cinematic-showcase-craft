@@ -129,6 +129,24 @@ html {
   scroll-padding-top: 72px;
 }
 
+/* Sections already add px-4; drop the extra container inset on phones and
+   halve it on tablets so content uses the screen. Desktop (lg+) keeps 2rem.
+   Kept in the components layer so explicit px-* utilities still win. */
+@layer components {
+  @media (max-width: 767px) {
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+}
+
 /* Global tighter heading spacing */
 @layer base {
   h1, h2, h3, h4, h5, h6 {
