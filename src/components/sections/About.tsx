@@ -22,13 +22,13 @@ export function About() {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-neon-orange to-yellow-400 mx-auto mb-8" />
 
-          <div className="bg-card border border-border rounded-xl p-8 md:p-12 shadow-lg hover:border-neon-orange/40 transition-colors">
-            <p className="text-muted-foreground text-lg leading-relaxed">
+          <div className="bg-card border border-border rounded-xl p-5 sm:p-8 md:p-12 shadow-lg hover:border-neon-orange/40 transition-colors">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
               <span className="text-foreground font-semibold">FrameLEN Media</span> is a creative
               media studio focused on visual storytelling, content creation, videography,
               photography, and brand-focused content production.
             </p>
-            <p className="text-muted-foreground text-lg leading-relaxed mt-6">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed mt-4 md:mt-6">
               We help businesses, creators, and organizations communicate their stories through
               impactful visual experiences — combining cinematic craft with modern, mobile-first
               production for brands of every size.

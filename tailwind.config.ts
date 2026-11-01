@@ -7,7 +7,8 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      // Sections already add px-4, so phones get no extra inset; desktop keeps 2rem.
+      padding: { DEFAULT: "0", md: "1rem", lg: "2rem" },
       screens: {
         "2xl": "1400px",
       },
