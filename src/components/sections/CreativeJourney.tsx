@@ -1,5 +1,6 @@
-import { Briefcase, Clapperboard, ExternalLink, Film, GraduationCap, Sparkles, Youtube } from "lucide-react";
+import { Briefcase, Clapperboard, ExternalLink, Film, GraduationCap, Palette, Sparkles, Youtube } from "lucide-react";
 import { YarlExperience } from "./YarlExperience";
+import { YgcJuniorExperience } from "./YgcJuniorExperience";
 import {
   internship,
   volunteeringAiVideos,
@@ -217,6 +218,12 @@ export function CreativeJourney() {
                 <ProjectCard key={p.title} project={p} icon={Sparkles} tag="Volunteering · AI Video" />
               ))}
             </div>
+          </div>
+          <div>
+            <h4 className="flex items-center gap-2 text-lg font-semibold text-foreground mb-4">
+              <Palette className="w-5 h-5 text-primary" /> YGC Junior 2026 Competition Seminar
+            </h4>
+            <YgcJuniorExperience />
           </div>
         </div>
       </div>
