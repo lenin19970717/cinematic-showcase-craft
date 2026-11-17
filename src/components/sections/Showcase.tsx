@@ -7,6 +7,7 @@ import { VideoEmbed } from "@/components/gallery/VideoEmbed";
 import { PhotographyGallery } from "@/components/gallery/PhotographyGallery";
 import { VideographyPortfolio } from "@/components/gallery/VideographyPortfolio";
 import { CreativeJourney } from "@/components/sections/CreativeJourney";
+import { PosterGallery } from "@/components/gallery/PosterGallery";
 
 // Import AI photos
 import aiPhoto1 from "@/assets/ai-photo-1.jpg";
@@ -75,6 +76,7 @@ const showcaseTabs = [
   { value: "videography", label: "Videography", icon: Video },
   { value: "shortfilms", label: "Short Films", icon: Clapperboard },
   { value: "drawings", label: "Drawings", icon: Pencil },
+  { value: "posters", label: "Poster Designs", icon: Pencil },
   { value: "aiphoto", label: "AI Photos", icon: Sparkles },
   { value: "aivideo", label: "AI Videos", icon: Play },
   { value: "performance", label: "My Performance", icon: Mic },
@@ -169,6 +171,10 @@ export function Showcase() {
             {/* Drawings */}
             <TabsContent value="drawings">
               <ImageGallery images={drawings} />
+            </TabsContent>
+
+            <TabsContent value="posters">
+              <PosterGallery />
             </TabsContent>
 
             {/* AI Photos */}
