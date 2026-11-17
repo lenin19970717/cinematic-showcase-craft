@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { photographyManifest, type PhotoEntry } from "@/data/photographyManifest";
+import { photographyManifest, type PhotoEntry, type PhotoCategory } from "@/data/photographyManifest";
+import { divinePhotography } from "@/data/divinePhotography";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 // Hosted image URLs, read from the asset pointers (one -thumb and one -full per photo).
@@ -11,22 +13,31 @@ const assetUrls = import.meta.glob("/src/assets/photography/**/*.asset.json", {
 }) as Record<string, string>;
 
 const urlFor = (photo: PhotoEntry, kind: "thumb" | "full") =>
+  (kind === "thumb" ? photo.thumbUrl : photo.fullUrl) ??
   assetUrls[`/src/assets/photography/${photo.key}-${kind}.webp.asset.json`];
 
 const altFor = (categoryName: string, photo: PhotoEntry) =>
   `${categoryName} photograph — ${photo.file}`;
 
-export function PhotographyGallery() {
-  const [categoryId, setCategoryId] = useState(photographyManifest[0].id);
-  const category = photographyManifest.find((c) => c.id === categoryId) ?? photographyManifest[0];
+const photographyCategories = [...photographyManifest, divinePhotography];
+
+export function PhotographyGallery({ categories = photographyCategories, galleryLabel = "Photography" }: {
+  categories?: PhotoCategory[];
+  galleryLabel?: string;
+}) {
+  const [categoryId, setCategoryId] = useState(categories[0].id);
+  const category = categories.find((c) => c.id === categoryId) ?? categories[0];
   const photos = category.photos;
 
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [visible, setVisible] = useState(false);
   const [fullLoaded, setFullLoaded] = useState(false);
   const touchStartX = useRef<number | null>(null);
+  const opener = useRef<HTMLElement | null>(null);
+  const closeButton = useRef<HTMLButtonElement | null>(null);
 
   const open = (index: number) => {
+    opener.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     setOpenIndex(index);
     setFullLoaded(false);
     requestAnimationFrame(() => setVisible(true));
@@ -34,7 +45,10 @@ export function PhotographyGallery() {
 
   const close = useCallback(() => {
     setVisible(false);
-    setTimeout(() => setOpenIndex(null), 250);
+    setTimeout(() => {
+      setOpenIndex(null);
+      opener.current?.focus({ preventScroll: true });
+    }, 250);
   }, []);
 
   const step = useCallback(
@@ -51,10 +65,18 @@ export function PhotographyGallery() {
   // Keyboard controls + scroll lock while the viewer is open
   useEffect(() => {
     if (openIndex === null) return;
+    closeButton.current?.focus({ preventScroll: true });
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
       else if (e.key === "ArrowLeft") step(-1);
       else if (e.key === "ArrowRight") step(1);
+      else if (e.key === "Tab") {
+        const controls = Array.from(closeButton.current?.closest('[role="dialog"]')?.querySelectorAll<HTMLButtonElement>("button") ?? []);
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
+      }
     };
     window.addEventListener("keydown", onKey);
     const prevOverflow = document.body.style.overflow;
@@ -84,23 +106,24 @@ export function PhotographyGallery() {
   const current = openIndex !== null ? photos[openIndex] : null;
 
   return (
-    <div>
+    <div className="min-w-0">
       {/* Category navigation — names match the Google Drive folders */}
       <div
         role="tablist"
-        aria-label="Photography categories"
+        aria-label={`${galleryLabel} categories`}
         className="mb-6 flex flex-wrap justify-center gap-1.5 md:gap-2"
       >
-        {photographyManifest.map((cat) => {
+        {categories.map((cat) => {
           const active = cat.id === categoryId;
           return (
-            <button
+            <Button
+              variant="ghost"
               key={cat.id}
               role="tab"
               aria-selected={active}
               onClick={() => selectCategory(cat.id)}
               className={cn(
-                "group inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs md:text-sm transition-colors",
+                "group inline-flex h-auto max-w-full items-center gap-1.5 whitespace-normal rounded-full border px-3 py-1.5 text-xs md:text-sm transition-colors",
                 active
                   ? "border-primary bg-primary text-primary-foreground"
                   : "border-border bg-card/60 text-muted-foreground hover:border-primary/50 hover:text-foreground"
@@ -115,19 +138,24 @@ export function PhotographyGallery() {
               >
                 {cat.photos.length}
               </span>
-            </button>
+            </Button>
           );
         })}
       </div>
 
+      {category.id === divinePhotography.id && (
+        <h3 className="mb-5 text-center text-xl font-semibold md:text-2xl">Divine Soorasamharam 2026</h3>
+      )}
+
       {/* Masonry gallery */}
       <div key={category.id} className="columns-2 md:columns-3 lg:columns-4 gap-2 md:gap-3 animate-fade-in">
         {photos.map((photo, index) => (
-          <button
+          <Button
+            variant="ghost"
             key={photo.key}
             onClick={() => open(index)}
             aria-label={`Open ${altFor(category.name, photo)}`}
-            className="group relative mb-2 md:mb-3 block w-full overflow-hidden rounded-lg border border-border/60 bg-card break-inside-avoid focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="group relative mb-2 md:mb-3 block h-auto w-full overflow-hidden rounded-lg border border-border/60 bg-card p-0 break-inside-avoid focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             style={{ aspectRatio: `${photo.w} / ${photo.h}` }}
           >
             <img
@@ -140,7 +168,7 @@ export function PhotographyGallery() {
               className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          </button>
+          </Button>
         ))}
       </div>
 
@@ -163,17 +191,22 @@ export function PhotographyGallery() {
             if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
           }}
         >
-          <button
+          <Button
+            ref={closeButton}
+            variant="ghost"
+            size="icon"
             onClick={close}
             aria-label="Close viewer"
             className="absolute right-3 top-3 z-10 rounded-full border border-border/60 bg-card/60 p-1.5 text-muted-foreground backdrop-blur-sm transition-colors hover:border-primary/60 hover:text-primary"
           >
             <X size={18} />
-          </button>
+          </Button>
 
           {photos.length > 1 && (
             <>
-              <button
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={(e) => {
                   e.stopPropagation();
                   step(-1);
@@ -182,8 +215,10 @@ export function PhotographyGallery() {
                 className="absolute left-2 md:left-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border/60 bg-card/60 p-1.5 text-muted-foreground backdrop-blur-sm transition-colors hover:border-primary/60 hover:text-primary"
               >
                 <ChevronLeft size={18} />
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={(e) => {
                   e.stopPropagation();
                   step(1);
@@ -192,7 +227,7 @@ export function PhotographyGallery() {
                 className="absolute right-2 md:right-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border/60 bg-card/60 p-1.5 text-muted-foreground backdrop-blur-sm transition-colors hover:border-primary/60 hover:text-primary"
               >
                 <ChevronRight size={18} />
-              </button>
+              </Button>
             </>
           )}
 
@@ -227,7 +262,7 @@ export function PhotographyGallery() {
             />
           </div>
 
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-xs tracking-wider text-muted-foreground tabular-nums">
+          <div aria-live="polite" className="absolute bottom-3 left-1/2 w-[90vw] -translate-x-1/2 text-center text-xs text-muted-foreground tabular-nums">
             <span className="text-primary">{openIndex + 1}</span> / {photos.length}
             <span className="ml-2 text-muted-foreground/60">· {category.name}</span>
           </div>

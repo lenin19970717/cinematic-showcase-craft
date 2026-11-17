@@ -8,6 +8,9 @@ export interface PhotoEntry {
   key: string;
   w: number;
   h: number;
+  /** Optional hosted URLs for galleries that preserve the original full-size file. */
+  thumbUrl?: string;
+  fullUrl?: string;
 }
 
 export interface PhotoCategory {
